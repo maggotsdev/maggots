@@ -1,0 +1,21 @@
+MAGGOTS
+Copyright (c) 2026 maggotsdev. MIT License (see LICENSE).
+
+This project loads and redistributes derived tables of:
+
+  Winding M, Pedigo BD, Barnes CL, Patsolic HG, Park E, Kazimiers T, Fushiki A,
+  Andrade IV, Khandelwal A, Valdes-Aleman J, Li F, Randel N, Barsotti E,
+  Correia A, Fetter RD, Hartenstein V, Priebe CE, Vogelstein JT, Cardona A,
+  Zlatic M. The connectome of an insect brain. Science 379, eadd9330 (2023).
+  https://doi.org/10.1126/science.add9330
+
+  as released in the neurodata "bilateral-connectome" repository
+  (https://github.com/neurodata/bilateral-connectome), directory data/processed-elife.
+
+Those tables are the work of their authors and are used under their open
+license. Nothing here is endorsed by them. The model built on top of them is a
+simplification, described in paper/maggots.md and disclosure.md.
+
+Fonts are loaded from Google Fonts under their licenses. Uniswap v4 addresses
+and event signatures are public. Market data is read from the Robinhood Chain
+public RPC.

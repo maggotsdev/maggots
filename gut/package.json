@@ -1,0 +1,17 @@
+{
+  "name": "maggots-gut",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "The gut: claims MAGGOTS creator fees, buys FLYBRAIN when the larva's feeding neurons fire, and drops it to holders.",
+  "scripts": {
+    "snapshot": "node snapshot.js",
+    "status": "node status.js",
+    "epoch": "node epoch.js",
+    "watch": "node watch.js"
+  },
+  "dependencies": {
+    "viem": "^2.21.0",
+    "dotenv": "^16.4.5"
+  }
+}

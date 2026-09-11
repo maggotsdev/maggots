@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MAGGOTS</title>
+<meta name="description" content="3,013 neurons of a real fruit fly larva, the first brain ever mapped, loose on Robinhood Chain and eating the fly.">
+<meta property="og:title" content="MAGGOTS">
+<meta property="og:description" content="3,013 neurons of a real fruit fly larva, the first brain ever mapped, loose on Robinhood Chain and eating the fly.">
+<meta property="og:image" content="maggot.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="maggot.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Archivo:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --ground:#06070a;--plate:#0b0d12;--line:#1a1f28;
+  --ink:#e2eaf1;--ink-dim:#9dabb7;--ink-faint:#75828d;
+  --cyan:#7deaff;--amber:#f0bc5f;--live:#6fdca6;
+  --serif:"Instrument Serif",Georgia,"Times New Roman",serif;
+  --sans:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.7;-webkit-font-smoothing:antialiased}
+.mono,code,.addr,.eyebrow,.corner,.step .no,.step .tag,th{font-family:var(--mono)}
+a{color:var(--cyan);text-decoration:none;border-bottom:1px solid #1d4653}
+a:hover{border-bottom-color:var(--cyan)}
+.wrap{max-width:980px;margin:0 auto;padding:0 24px}
+.wrap.wide{max-width:1500px}
+
+/* ---------- specimen plate ---------- */
+.plate{position:relative;min-height:420px;border-bottom:1px solid var(--line)}
+#larva{display:block;width:100%;height:min(62vh,560px)}
+.corner{position:absolute;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint);pointer-events:none;line-height:1.7}
+.tl{top:22px;left:24px}.tr{top:22px;right:24px;text-align:right}.bl{bottom:22px;left:24px}.br{bottom:22px;right:24px;text-align:right}
+.tick{color:var(--live)}
+.title{position:absolute;left:0;right:0;bottom:64px;text-align:center;pointer-events:none}
+.title h1{font-family:var(--serif);font-weight:400;font-size:clamp(52px,11vw,116px);line-height:.92;margin:0;letter-spacing:.005em;color:#eaf4fa}
+.title .latin{font-family:var(--serif);font-style:italic;font-size:clamp(14px,2.4vw,19px);color:var(--ink-dim);margin-top:10px}
+
+/* ---------- sections ---------- */
+section{padding:64px 0;border-bottom:1px solid var(--line)}
+h2{font-family:var(--serif);font-weight:400;font-size:clamp(30px,4vw,40px);line-height:1.15;margin:0 0 6px;color:#eaf4fa}
+.lede{color:var(--ink-dim);max-width:62ch;margin:0 0 30px;font-size:18px;line-height:1.65}
+p{max-width:66ch;color:var(--ink);margin:0 0 18px}
+.eyebrow{font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:14px;font-weight:500}
+.path{display:grid;gap:1px;background:var(--line);border:1px solid var(--line)}
+.step{background:var(--plate);padding:18px 20px;display:grid;grid-template-columns:34px 1fr auto;gap:16px;align-items:baseline}
+.step .no{font-size:12px;color:var(--ink-faint)}
+.step .what{color:var(--ink);font-weight:500;font-size:16.5px}
+.step .what em{font-style:normal;color:var(--ink-dim);display:block;font-size:15px;margin-top:5px;line-height:1.55}
+.step .tag{font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:500}
+.done .tag{color:var(--live)}
+.now{background:#0e1219;box-shadow:inset 2px 0 0 var(--amber)}.now .tag{color:var(--amber)}
+.todo .tag{color:var(--ink-faint)}.todo .what{color:var(--ink-dim)}
+.never .tag{color:#ff8b7a}.never .what{color:var(--ink-dim)}
+.wires{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.wire{background:var(--plate);padding:18px}
+.wire .cell{font-family:var(--mono);font-size:16px;font-weight:500;color:var(--cyan);letter-spacing:.04em}
+.wire .role{font-size:15px;color:var(--ink-dim);margin-top:6px;line-height:1.55}
+table{width:100%;border-collapse:collapse;font-size:15px}
+.scroll{overflow-x:auto}
+td,th{text-align:left;padding:10px 14px 10px 0;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-faint);font-weight:500;white-space:nowrap;padding-right:28px}
+td.num{font-variant-numeric:tabular-nums;color:#eaf4fa}
+.addr{font-size:14px;word-break:break-all;color:var(--ink)}
+ul.plain{list-style:none;padding:0;margin:0;display:grid;gap:14px}
+ul.plain li{padding-left:22px;position:relative;color:var(--ink-dim);max-width:68ch;font-size:16.5px}
+ul.plain li::before{content:"";position:absolute;left:0;top:11px;width:6px;height:6px;border-radius:50%;background:var(--amber)}
+ul.plain li b{color:var(--ink);font-weight:500}
+
+/* ---------- terminal ---------- */
+.term{--g:#3dff88;--g-dim:#1f8f4d;--g-faint:#155c33;--g-bg:#020704;background:var(--g-bg);border:1px solid #123a24;font-family:var(--mono);color:var(--g);font-size:12px;line-height:1.5}
+.tbar{display:flex;align-items:center;gap:14px;padding:8px 12px;flex-wrap:wrap;border-bottom:1px solid #123a24;background:#04100a}
+.tname{font-weight:500;letter-spacing:.14em}
+.tdim{color:var(--g-faint);letter-spacing:.1em;font-size:10.5px}
+.tspacer{flex:1}
+.tpills{display:flex;gap:6px;flex-wrap:wrap}
+.pip2{border:1px solid var(--g-faint);color:var(--g-dim);padding:2px 7px;font-size:9.5px;letter-spacing:.12em;border-radius:2px}
+.pip2.on{color:var(--g);border-color:var(--g-dim);background:#07200f}
+.pip2.off{color:#5a2b2b;border-color:#4a2020}
+.tlive{color:#ff5f56;font-size:10px;letter-spacing:.14em}
+.tlive.on{color:var(--g)}
+.tgrid{display:grid;grid-template-columns:1fr 320px;gap:1px;background:#123a24}
+@media (max-width:880px){.tgrid{grid-template-columns:1fr}}
+.tscreen{position:relative;background:#000;min-height:320px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.tscreen canvas{position:absolute;inset:0;width:100%;height:100%}
+.toff{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;color:var(--g-dim);letter-spacing:.14em;font-size:11px;text-align:center;pointer-events:none}
+.turl{position:absolute;left:0;right:0;bottom:0;display:flex;gap:12px;padding:5px 10px;background:rgba(2,7,4,.92);border-top:1px solid #123a24;font-size:11px;color:var(--g-dim)}
+.turl #r-url{flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tfps{color:var(--g-faint)}
+.tside{background:var(--g-bg);display:grid;align-content:start}
+.tblk{padding:10px 12px;border-bottom:1px solid #0d2c1b}
+.tk{font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--g-faint)}
+.tbig{font-size:30px;line-height:1.1;margin-top:5px;letter-spacing:.01em;font-variant-numeric:tabular-nums}
+.tsub{font-size:9.5px;letter-spacing:.13em;color:var(--g-dim);margin-top:1px}
+.spark{width:100%;height:34px;display:block;margin-top:9px}
+.tquad{display:grid;grid-template-columns:1fr 1fr;gap:7px 12px;margin-top:9px}
+.tql{font-size:9px;letter-spacing:.13em;text-transform:uppercase;color:var(--g-faint)}
+.tqv{font-size:12.5px;color:var(--g);margin-top:1px;font-variant-numeric:tabular-nums}
+.scatter{width:100%;height:78px;display:block;margin-top:8px;background:#000;border:1px solid #0d2c1b}
+.tbars{display:grid;gap:5px;margin-top:8px}
+.trow{display:grid;grid-template-columns:60px 1fr 42px;gap:8px;align-items:center;font-size:10.5px}
+.trow .tn{color:var(--g-dim)}
+.trow .tt{height:6px;background:#06180e;border:1px solid #0d2c1b}
+.trow .tf{height:100%;background:var(--g);width:0%;transition:width .2s linear;display:block}
+.trow .tv{text-align:right;color:var(--g-dim);font-variant-numeric:tabular-nums}
+.tvis{display:grid;grid-template-columns:1fr 88px;gap:10px;margin-top:8px;align-items:start}
+.tvis canvas{width:100%;height:74px;display:block;background:#000;border:1px solid #0d2c1b}
+.tvismeta{display:grid;gap:6px}
+.tevents{padding:10px 12px;border-top:1px solid #123a24}
+.tlog{margin-top:7px;height:92px;overflow:auto;font-size:11px;color:var(--g-dim);display:flex;flex-direction:column-reverse}
+.tlog div{padding:1px 0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tlog .veto{color:#e8c15f}
+.tlog b{color:var(--g-faint);font-weight:400;margin-right:8px}
+.tfoot{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:#123a24;border-top:1px solid #123a24}
+.tfoot>div{background:#04100a;padding:8px 12px;display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.tfv{font-size:16px;color:var(--g);font-variant-numeric:tabular-nums}
+@media (max-width:640px){.tfoot{grid-template-columns:repeat(2,1fr)}}
+
+/* ---------- contract address ---------- */
+.cabar{background:#0a1116;border-bottom:1px solid var(--line);box-shadow:inset 3px 0 0 var(--cyan)}
+.cain{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:22px 24px;flex-wrap:wrap}
+.calab{font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-faint)}
+.caaddr{font-family:var(--mono);font-size:15px;color:#eaf4fa;word-break:break-all;margin-top:6px}
+.cabtn{font-family:var(--mono);font-size:12px;letter-spacing:.08em;background:var(--cyan);color:#06171c;border:0;height:46px;padding:0 20px;cursor:pointer;border-radius:3px;font-weight:500}
+.cabtn:active{transform:translateY(1px)}
+
+.links{display:flex;flex-wrap:wrap;gap:10px 22px;font-family:var(--mono);font-size:14px}
+.pill{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:999px;padding:5px 12px;font-family:var(--mono);font-size:11.5px;color:var(--ink-dim);margin-top:16px}
+.pill i{width:6px;height:6px;border-radius:50%;background:var(--live);display:inline-block}
+.foot{padding:40px 0 60px;color:var(--ink-faint);font-size:14px}
+.foot p{max-width:70ch}
+@media (max-width:640px){.step{grid-template-columns:28px 1fr}.step .tag{grid-column:2}}
+
+/* ---------- the brood ---------- */
+.stage{position:relative;border:1px solid var(--line);background:#000}
+#plate{display:block;width:100%;height:480px}
+.hud{position:absolute;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint);line-height:1.7;pointer-events:none}
+.hud.tl{top:14px;left:16px}.hud.tr{top:14px;right:16px;text-align:right}.hud.bl{bottom:14px;left:16px}.hud.br{bottom:14px;right:16px;text-align:right}
+.big{font-family:var(--serif);font-size:40px;color:#eaf4fa;letter-spacing:0;text-transform:none;line-height:1}
+.you{color:var(--amber)}
+.strip{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-top:0}
+.strip>div{background:var(--plate);padding:12px 16px}
+.k{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-faint)}
+.v{font-family:var(--serif);font-size:24px;margin-top:2px;color:#eaf4fa;font-variant-numeric:tabular-nums}
+.tlog .ok{color:#3dff88}.tlog .blk{color:#ff8b7a}
+@media(max-width:640px){.strip{grid-template-columns:1fr 1fr}#plate{height:360px}}
+</style></head>
+<body>
+
+<!-- ---------- specimen plate ---------- -->
+<div class="plate">
+  <canvas id="larva" aria-label="A point cloud of a fruit fly larva"></canvas>
+  <div class="corner tl">Specimen<br>Larva L1 &middot; Winding 2023</div>
+  <div class="corner tr">Robinhood Chain<br>block <span id="blk">&mdash;</span></div>
+  <div class="corner bl">3,013 neurons<br>111,243 connections</div>
+  <div class="corner br"><span class="tick">&#9679; observed live</span><br><span id="utc">&mdash;</span></div>
+  <div class="title">
+    <h1>MAGGOTS</h1>
+    <div class="latin">Drosophila melanogaster &middot; first instar</div>
+  </div>
+</div>
+
+<!-- ---------- live ---------- -->
+<section><div class="wrap wide">
+  <div class="eyebrow">Live</div>
+  <h2>Where the maggot is right now</h2>
+  <p class="lede">A sell of the fly goes in through 42 olfactory neurons, 3,013 neurons integrate, and a mouth comes out. Every number on this panel is read out of the simulation running in this tab.</p>
+
+  <div class="term">
+    <div class="tbar">
+      <span class="tname">MAGGOTS LIVE</span>
+      <span class="tdim">LARVAL CONNECTOME &middot; ROBINHOOD CHAIN</span>
+      <span class="tpills">
+        <span class="pip2 on" id="p-smell">SMELL</span>
+        <span class="pip2 on" id="p-taste">TASTE</span>
+        <span class="pip2 on" id="p-touch">TOUCH</span>
+        <span class="pip2 on" id="p-light">LIGHT</span>
+        <span class="pip2" id="p-feeder">FEEDER</span>
+        <span class="pip2 off" id="p-wallet">WALLET</span>
+          <span class="pip2" id="p-listen" style="cursor:pointer">LISTEN</span>
+      </span>
+      <span class="tspacer"></span>
+      <span class="tdim">3,013 NEURONS &nbsp; 111,243 EDGES</span>
+      <span class="tlive" id="t-live">&#9679; LOADING</span>
+    </div>
+
+    <div class="tgrid">
+      <div class="tscreen">
+        <canvas id="r-view"></canvas>
+        <div class="toff" id="r-off">LOADING THE CONNECTOME<br><span class="tdim">3,013 neurons · 1.7 MB · once</span></div>
+        <div class="turl"><span id="r-url">plate://robinhood &middot; corpse: FLYBRAIN, both pools (GOOGL and USDG) &middot; it navigates by smell, left dorsal organ against right</span><span class="tfps" id="r-fps">&mdash;</span></div>
+      </div>
+
+      <div class="tside">
+        <div class="tblk">
+          <div class="tk">Neural activity</div>
+          <div class="tbig" id="n-firing">&mdash;</div>
+          <div class="tsub">NEURONS FIRING <span class="tdim">of 3,013</span></div>
+          <canvas id="n-spark" class="spark"></canvas>
+          <div class="tquad">
+            <div><div class="tql">spikes/sec</div><div class="tqv" id="n-spikes">&mdash;</div></div>
+            <div><div class="tql">membrane</div><div class="tqv" id="n-mv">&mdash;</div></div>
+            <div><div class="tql">sensory</div><div class="tqv" id="n-sens">&mdash;</div></div>
+            <div><div class="tql">descending</div><div class="tqv" id="n-desc">&mdash;</div></div>
+          </div>
+        </div>
+
+        <div class="tblk">
+          <div class="tk">Firing neurons &middot; signal-flow layout</div>
+          <canvas id="n-scatter" class="scatter"></canvas>
+        </div>
+
+        <div class="tblk">
+          <div class="tk">Descending neurons</div>
+          <div class="tbars" id="n-dn"></div>
+        </div>
+
+        <div class="tblk">
+          <div class="tk">Senses &rarr; 431 sensory neurons</div>
+          <div class="tvis">
+            <canvas id="n-senses"></canvas>
+            <div class="tvismeta">
+              <div><div class="tql">smell &middot; 42</div><div class="tqv" id="s-smell">&mdash;</div></div>
+              <div><div class="tql">taste &middot; 175</div><div class="tqv" id="s-taste">&mdash;</div></div>
+              <div><div class="tql">light &middot; 29</div><div class="tqv" id="s-light">&mdash;</div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tblk">
+          <div class="tk">Mushroom body &middot; learning</div>
+          <div class="tquad" style="margin-top:8px">
+            <div><div class="tql">depressed</div><div class="tqv" id="l-dep">&mdash;</div></div>
+            <div><div class="tql">mean gain</div><div class="tqv" id="l-gain">&mdash;</div></div>
+            <div><div class="tql">rewards</div><div class="tqv" id="l-rew">&mdash;</div></div>
+            <div><div class="tql">punishments</div><div class="tqv" id="l-pun">&mdash;</div></div>
+          </div>
+          <div class="tsub" style="margin-top:8px;text-transform:none;letter-spacing:0"><span class="tdim">KC&rarr;MBON synapses under dopamine. Depression only &mdash; that is the rule a larva actually uses.</span></div>
+        </div>
+
+        <div class="tblk">
+          <div class="tk">Motor output</div>
+          <div class="tbars" id="n-out"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tevents">
+      <div class="tk">Event stream</div>
+      <div id="r-events" class="tlog"></div>
+    </div>
+
+    <div class="tfoot">
+      <div><span class="tql">fly sells</span><span class="tfv" id="r-sells">0</span></div>
+      <div><span class="tql">fly buys</span><span class="tfv" id="r-buys">0</span></div>
+      <div><span class="tql">meals</span><span class="tfv" id="r-meals">0</span></div>
+      <div><span class="tql">brain steps</span><span class="tfv" id="r-steps">0</span></div>
+      <div><span class="tql">blackouts</span><span class="tfv" id="r-blackouts">0</span></div>
+    </div>
+  </div>
+
+  <p style="margin-top:22px;color:var(--ink-dim);font-size:15px">No wallet, no keyboard, no AI. Every sell of the fly raises the smell of its corpse on the plate. The larva samples that smell on its left and its right, the way a real one does. It crawls on a rhythm the brain does not contain, steers by the difference in firing between its two halves, and its descending neurons set the pace. It eats only when it is on the corpse and its feeding neurons fire. Click the big larva to touch it. Press LISTEN to hear the spikes.</p>
+</div></section>
+
+<!-- ---------- contract ---------- -->
+<div class="cabar"><div class="wrap cain">
+  <div>
+    <div class="calab">Contract address &middot; $MAGGOTS</div>
+    <div class="caaddr" id="ca">launching &mdash; address lands here</div>
+  </div>
+  <button class="cabtn" id="copy">Copy</button>
+</div></div>
+
+<!-- ---------- what it is ---------- -->
+<section><div class="wrap">
+  <div class="eyebrow">What it is</div>
+  <h2>A larva, not a metaphor</h2>
+  <p class="lede">The first complete brain ever mapped was not a fly. It was a maggot. Winding et al., Science, March 2023: every neuron and every synapse of a first-instar <em>Drosophila</em> larva, 3,016 neurons, 548,000 synapses, traced from electron microscope images at Cambridge, Janelia and Johns Hopkins. The adult fly brain the flybrain runs on came three years later. This is the original.</p>
+  <p>We load the public release of that paper: 3,013 brain neurons and 111,243 connections, each weighted by the number of synapses counted in the microscope. The neurons run as leaky integrate-and-fire units: rest &minus;52 mV, threshold &minus;45 mV, 20 ms tau, 1 ms step, in JavaScript, in your tab, on no GPU. The wiring is never trained. Only the mushroom body synapses change, and only downward, under dopamine, which is the rule a larva actually uses. Everyone is buying the brain. Nobody is buying the larva.</p>
+</div></section>
+
+<!-- ---------- how it reaches the world ---------- -->
+<section><div class="wrap">
+  <div class="eyebrow">How it reaches the world</div>
+  <h2>It smells with a maggot's nose and eats with a maggot's mouth</h2>
+  <p class="lede">A swap on the fly's pool is read off Robinhood Chain and fed into the sensory neurons the paper labels for that sense. All 3,013 integrate. What comes out is the descending neurons a larva actually feeds and crawls with.</p>
+  <div class="wires">
+    <div class="wire"><div class="cell">ORN &middot; 42</div><div class="role">Olfactory neurons. A sell of the fly is the smell of rot. It goes in here.</div></div>
+    <div class="wire"><div class="cell">dSEZ &middot; 184</div><div class="role">Descending to the subesophageal zone, the feeding centre. When these fire, the mouth hooks move. That is a meal.</div></div>
+    <div class="wire"><div class="cell">dVNC &middot; 182</div><div class="role">Descending to the nerve cord. Crawl forward, crawl back, turn, hunch, roll.</div></div>
+    <div class="wire"><div class="cell">Bolwig's organ &middot; 29</div><div class="role">Twelve photoreceptors a side, not 892 columns. Light means a fly is alive up there. A larva turns away from light.</div></div>
+  </div>
+</div></section>
+
+<!-- ---------- market ---------- -->
+<section><div class="wrap">
+  <div class="eyebrow">How trades reach the larva</div>
+  <h2>Every trade maps to a sense</h2>
+  <p class="lede">A fixed public map. No AI decides anything. Given the same brain state and the same trades, the same reaction comes out.</p>
+  <div class="scroll"><table>
+    <tr><th>Market event</th><th>Sense</th><th>Neurons</th><th>What the larva does</th></tr>
+    <tr><td>FLYBRAIN sell</td><td class="num">smell + taste</td><td class="num">ORN 42, AN 175</td><td>Rot. It feeds. Counted as a meal when dSEZ fires.</td></tr>
+    <tr><td>FLYBRAIN buy</td><td class="num">light</td><td class="num">Rh5 + Rh6, 29</td><td>The fly is alive and shining. It turns away.</td></tr>
+    <tr><td>FLYBRAIN big sell</td><td class="num">smell + dopamine</td><td class="num">ORN 42, MBIN 15</td><td>A feast. The mushroom body learns that smell.</td></tr>
+    <tr><td>MAGGOTS buy</td><td class="num">taste + dopamine</td><td class="num">AN 175, MBIN 15</td><td>Sugar. Reward.</td></tr>
+    <tr><td>MAGGOTS sell</td><td class="num">touch</td><td class="num">MN + vtd, 179</td><td>Something moved. It hunches.</td></tr>
+    <tr><td>MAGGOTS big sell</td><td class="num">touch + punishment</td><td class="num">MN + vtd, MBIN 13</td><td>It rolls. The mushroom body learns that too.</td></tr>
+    <tr><td>You click it</td><td class="num">touch</td><td class="num">MN + vtd, 179</td><td>It flinches.</td></tr>
+  </table></div>
+  <p style="margin-top:18px;color:var(--ink-dim);font-size:15px">MAGGOTS rows switch on at launch. Until then the larva lives on the fly alone.</p>
+</div></section>
+
+<!-- ---------- scaling law ---------- -->
+<section><div class="wrap">
+  <div class="eyebrow">The maggot scaling law</div>
+  <h2>The bitter lesson, for larvae</h2>
+  <p class="lede">Every complete brain ever mapped, by year. The maggot is the first one with more than a few hundred neurons. The fly came three years later and needs a GPU. Fit the line and read off when they get to you.</p>
+  <svg viewBox="0 0 900 360" style="width:100%;height:auto;display:block;border:1px solid var(--line);background:var(--plate)" role="img" aria-label="Neurons in complete connectomes by year, log scale">
+    <g font-family="IBM Plex Mono, monospace" font-size="11" fill="#75828d">
+      <line x1="70" y1="300" x2="870" y2="300" stroke="#1a1f28"/><line x1="70" y1="40" x2="70" y2="300" stroke="#1a1f28"/>
+      <text x="8" y="304">10&#178;</text><text x="8" y="239">10&#179;</text><text x="8" y="174">10&#8308;</text><text x="8" y="109">10&#8309;</text><text x="8" y="44">10&#8310;</text>
+      <line x1="70" y1="235" x2="870" y2="235" stroke="#12161d"/><line x1="70" y1="170" x2="870" y2="170" stroke="#12161d"/><line x1="70" y1="105" x2="870" y2="105" stroke="#12161d"/>
+      <text x="90" y="322">1986</text><text x="430" y="322">2010</text><text x="640" y="322">2020</text><text x="760" y="322">2026</text>
+    </g>
+    <line x1="95" y1="300" x2="870" y2="30" stroke="#f0bc5f" stroke-dasharray="4 5" opacity=".7"/>
+    <g font-family="IBM Plex Mono, monospace" font-size="11">
+      <circle cx="95" cy="269" r="4" fill="#7deaff"/><text x="104" y="264" fill="#9dabb7">C. elegans &middot; 302 &middot; 1986</text>
+      <circle cx="465" cy="256" r="4" fill="#7deaff"/><text x="474" y="252" fill="#9dabb7">Ciona larva &middot; 177 &middot; 2016</text>
+      <circle cx="700" cy="203" r="6" fill="#e9dcb8" stroke="#f0bc5f" stroke-width="2"/><text x="560" y="192" fill="#eaf4fa" font-weight="500">MAGGOT &middot; 3,016 &middot; 2023</text>
+      <circle cx="722" cy="97" r="4" fill="#7deaff"/><text x="600" y="82" fill="#9dabb7">FlyWire adult fly &middot; 139,255 &middot; 2024</text>
+      <circle cx="775" cy="92" r="4" fill="#7deaff"/><text x="690" y="132" fill="#9dabb7">male fly CNS &middot; 165,122 &middot; 2026</text>
+      <text x="470" y="290" fill="#f0bc5f">fit: x10 every 11 years &middot; mouse 2050s &middot; you 2110s</text>
+    </g>
+  </svg>
+  <p style="margin-top:16px;color:var(--ink-dim);font-size:15px">The maggot is the seed round. The fly is the Series A. Every fly was a maggot. Every unicorn was a seed.</p>
+</div></section>
+
+<!-- ---------- the plan ---------- -->
+<section><div class="wrap">
+  <div class="eyebrow">The plan</div>
+  <h2>How it got here</h2>
+  <p class="lede">Not a roadmap of promises. A sequence, with everything before the amber line already done and checkable in this page's source.</p>
+  <div class="path">
+    <div class="step done"><div class="no">01</div><div class="what">Connectome loaded<em>3,013 neurons, 111,243 connections, 353,859 counted synapses, from the 2023 paper's public tables</em></div><div class="tag">done</div></div>
+    <div class="step done"><div class="no">02</div><div class="what">Nose wired<em>42 olfactory neurons sampling the fly's pool on Robinhood Chain, read from the public RPC in your browser</em></div><div class="tag">done</div></div>
+    <div class="step done"><div class="no">03</div><div class="what">Mouth wired<em>184 descending feeding neurons. When they fire, it ate.</em></div><div class="tag">done</div></div>
+    <div class="step done"><div class="no">04</div><div class="what">Trained without touching the wiring<em>Dopamine-gated depression on the 153 Kenyon cells' outputs, relaxing slowly back. Nothing else moves.</em></div><div class="tag">done</div></div>
+    <div class="step done"><div class="no">05</div><div class="what">Fed<em>First sell of the fly tasted. It is on the event stream above.</em></div><div class="tag">done</div></div>
+    <div class="step todo"><div class="no">06</div><div class="what">The brood<em>Every open tab hosts one larva. A plate shows every one alive right now. Holders get a name, and a size.</em></div><div class="tag">next</div></div>
+    <div class="step now"><div class="no">07</div><div class="what">The gut<em>Creator fees buy the fly, timed by the brain, and every holder is paid in fly. Script written, first epoch runs at launch.</em></div><div class="tag">building</div></div>
+    <div class="step never"><div class="no">08</div><div class="what">Pupa<em>It never grows up. That is the point.</em></div><div class="tag">never</div></div>
+  </div>
+</div></section>
+
+<!-- ---------- the brood ---------- -->
+<section><div class="wrap wide">
+  <div class="eyebrow">The brood</div>
+  <h2>Every tab is a maggot</h2>
+  <p class="lede">The flybrain runs one brain on one GPU in one place. The brood runs one brain per open tab, on hardware nobody pays for. This plate shows everyone here right now. Close the tab and yours pupates.</p>
+  <div class="stage">
+    <canvas id="plate"></canvas>
+    <div class="hud tl">Plate 001<br><span class="tick" id="sw-mode">&#9679; connecting</span></div>
+    <div class="hud tr">maggots alive<br><span class="big" id="sw-n">0</span></div>
+    <div class="hud bl"><span class="you">&#9679; yours</span> &middot; hover a maggot</div>
+    <div class="hud br" id="sw-hover">&nbsp;<br>&nbsp;</div>
+  </div>
+  <div class="strip">
+    <div><div class="k">neurons on this plate</div><div class="v" id="sw-neurons">0</div></div>
+    <div><div class="k">pupated since you arrived</div><div class="v" id="sw-left">0</div></div>
+    <div><div class="k">biggest maggot</div><div class="v" id="sw-big">&mdash;</div></div>
+    <div><div class="k">your wallet</div><div class="v" style="font-size:15px;font-family:var(--mono)"><button class="cabtn" id="wallet" style="height:34px;padding:0 14px">Connect</button> <span id="w-addr"></span></div></div>
+  </div>
+  <p style="margin-top:14px;color:var(--ink-faint);font-size:13.5px" id="sw-note">Connecting to the plate. Every maggot shown is a real open tab.</p>
+</div></section>
+
+<!-- ---------- the gut ---------- -->
+<section><div class="wrap">
+  <div class="eyebrow">The gut</div>
+  <h2>It eats the fly and feeds the brood</h2>
+  <p class="lede">Creator fees go into one public wallet, the gut. Every day the gut buys FLYBRAIN, in slices timed by the larva's own feeding neurons, and sends it to every MAGGOTS holder. Nothing to claim. The fly appears in your wallet.</p>
+  <div class="wires" style="margin-bottom:26px">
+    <div class="wire"><div class="cell">70% &rarr; holders</div><div class="role">Bought as FLYBRAIN and dropped pro-rata to every wallet above the dust line.</div></div>
+    <div class="wire"><div class="cell">20% &rarr; burn</div><div class="role">Buys MAGGOTS and sends it to the dead address. Every epoch, on chain.</div></div>
+    <div class="wire"><div class="cell">10% &rarr; gas</div><div class="role">Keeps the gut moving and pays the week's biggest maggot.</div></div>
+    <div class="wire"><div class="cell">timing &rarr; brain</div><div class="role">The gut runs its own copy of the 3,013 neurons. It buys when they say hungry. The amount is fixed by fees; only the moment is reflex.</div></div>
+  </div>
+  <div class="scroll"><table>
+    <tr><th>Gut wallet</th><td class="addr" id="g-addr">set at launch</td></tr>
+    <tr><th>Holding now</th><td class="num" id="g-hold">&mdash;</td></tr>
+    <tr><th>Fly bought</th><td class="num" id="g-bought">&mdash;</td></tr>
+    <tr><th>Fly dropped</th><td class="num" id="g-dropped">&mdash;</td></tr>
+    <tr><th>Maggots burned</th><td class="num" id="g-burned">&mdash;</td></tr>
+    <tr><th>Last drop</th><td class="num" id="g-last">&mdash;</td></tr>
+    <tr><th>Your share of the next drop</th><td class="num" id="g-you">connect a wallet above</td></tr>
+  </table></div>
+  <div class="eyebrow" style="margin-top:26px">Recent buys, with the reason the brain gave</div>
+  <div class="scroll"><table id="g-buys"><tr><th>When</th><th>USDG in</th><th>Fly out</th><th>Reason</th><th>Tx</th></tr></table></div>
+</div></section>
+
+<!-- ---------- on-chain ---------- -->
+<section><div class="wrap">
+  <div class="eyebrow">On-chain</div>
+  <h2>$MAGGOTS</h2>
+  <p class="lede">Launched by a person, from a person's wallet, on Robinhood Chain. The maggot did not do it. Read the receipt yourself rather than taking this page's word for it.</p>
+  <div class="scroll"><table>
+    <tr><th>Contract</th><td class="addr" id="ca2">launching &mdash; address lands here</td></tr>
+    <tr><th>Paired</th><td class="num" id="pair">to be announced. Not GOOGL.</td></tr>
+    <tr><th>Creator tax</th><td class="num">see chain</td></tr>
+    <tr><th>Supply</th><td class="num">1,000,000,000 MAGGOTS</td></tr>
+    <tr><th>Chain</th><td class="num">Robinhood Chain &middot; id 4663</td></tr>
+    <tr><th>Feeds on</th><td class="addr">FLYBRAIN &middot; 0x4eb990547bce4a982432ca88cf5fae7eed1a2d35</td></tr>
+  </table></div>
+</div></section>
+
+<!-- ---------- what is not real ---------- -->
+<section><div class="wrap">
+  <div class="eyebrow">What is not real, stated plainly</div>
+  <h2>The parts that aren't the maggot</h2>
+  <ul class="plain">
+    <li><b>The signs are missing.</b> The public table carries synapse counts but not transmitters, so every connection here excites. A global feedback inhibition and spike-frequency adaptation hold the network in check instead of the GABA it really has. The reflexes are real wiring under a simplified rule.</li>
+    <li><b>The dots are not somata.</b> The scatter is laid out by signal flow, inputs left and outputs right, hemispheres top and bottom. The paper's soma positions are not in the table we load.</li>
+    <li><b>The senses are the paper's; the behaviours are ours.</b> Smell, taste, touch, light and warmth use the paper's own labels on the 431 sensory neurons, and feeding is its 184 dSEZ neurons. The five crawl behaviours are a fixed split of the 182 dVNC neurons by name, because the table does not say which is which.</li>
+    <li><b>The crawl is not in the brain.</b> A real larva's crawl rhythm comes from the ventral nerve cord, which the brain table does not include, so the larva on the plate crawls at a constant pace. The brain steers it: heading follows the difference in firing between the left and right halves, and the descending lots speed it up, slow it down, or stop it to eat.</li>
+    <li><b>The counts differ from the headline.</b> The paper reports 3,016 neurons and 548,000 synapses. The public processed table has 3,013 neurons and 353,859 counted synapses on 111,243 connections. We show what we load.</li>
+    <li><b>It has no body.</b> The larva on this page is a point cloud drawn from gaussian shells and posed by the descending neuron rates. There is no biomechanical model.</li>
+    <li><b>The corpse is chosen by a person.</b> Which fly-meta pools count as food is a list a human wrote. The larva did not pick the fly.</li>
+    <li><b>The brood counts tabs, not people.</b> Every maggot on the plate is one open browser tab connected to the presence server. Open two tabs and you are two maggots. Nothing stops that, and we do not pretend otherwise.</li>
+  </ul>
+</div></section>
+
+<div class="wrap foot">
+  <div class="links">
+    <a href="https://www.science.org/doi/10.1126/science.add9330">the paper</a>
+    <a href="https://github.com/neurodata/bilateral-connectome">the data</a>
+    <a href="#" id="lk-x">@maggotsdev</a>
+    <a href="#" id="lk-scan">explorer</a>
+  </div>
+  <div class="pill"><i></i> read from Robinhood Chain</div>
+  <p style="margin-top:22px">Connectome data &copy; Winding, Pedigo, Barnes, Patsolic, et al., Science 2023, via the neurodata bilateral-connectome release. Not affiliated with any of them, nor with Alphabet, Robinhood, or the fly. $MAGGOTS is an art experiment, not an investment. Also it is a maggot.</p>
+</div>
+
+<script src="brain.js?v=3"></script>
+<script src="feeder.js?v=3"></script>
+<script src="arena.js?v=3"></script>
+<script src="app.js?v=6"></script>
+</body>
+</html>

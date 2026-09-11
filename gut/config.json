@@ -1,0 +1,49 @@
+{
+  "chainId": 4663,
+  "rpc": "https://rpc.mainnet.chain.robinhood.com",
+  "explorer": "https://robinhoodchain.blockscout.com",
+
+  "maggots": {
+    "address": "0x0000000000000000000000000000000000000000",
+    "poolId": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "decimals": 18,
+    "totalSupply": "1000000000",
+    "note": "fill after launch: token address and the Pons pool id"
+  },
+  "quote": { "symbol": "USDG", "address": "0x5fc5360d0400a0fd4f2af552add042d716f1d168", "decimals": 6 },
+  "flybrain": {
+    "address": "0x4eb990547bce4a982432ca88cf5fae7eed1a2d35",
+    "decimals": 18,
+    "usdgPoolId": "0x6191331ead43b8876ea312020ca58e539c51ef48021b3b93fac2718893c0b771",
+    "usdgPoolFee": 9000,
+    "usdgPoolTickSpacing": 90,
+    "flybrainIsCurrency0": true
+  },
+
+  "uniswap": {
+    "poolManager": "0x8366a39cc670b4001a1121b8f6a443a643e40951",
+    "universalRouter": "0x8876789976decbfcbbbe364623c63652db8c0904",
+    "permit2": "0x000000000022D473030F116dDEE9F6B43aC78BA3",
+    "quoter": "0x8dc178efb8111bb0973dd9d722ebeff267c98f94"
+  },
+  "pons": {
+    "factory": "0x7eD598BcEf8bd9Edd8C97A195C6d13f40801EC7e",
+    "feeEscrow": "0xd3AFEB2a57f70eF218Aa82451c51B2fb0416Ac9e",
+    "locker": "0x267444D099b10fB5Ed7c3Cc7B7c767AdcA574952"
+  },
+
+  "split": { "holders": 0.70, "buyback": 0.20, "keep": 0.10 },
+  "epochHours": 24,
+  "minHoldFractionOfSupply": 0.0001,
+  "maxRecipients": 2000,
+  "excludeAddresses": [
+    "0x0000000000000000000000000000000000000000",
+    "0x000000000000000000000000000000000000dEaD",
+    "0x8366a39cc670b4001a1121b8f6a443a643e40951",
+    "0x267444D099b10fB5Ed7c3Cc7B7c767AdcA574952"
+  ],
+  "buySlices": 6,
+  "slippageBps": 300,
+  "gutAddress": "0x30772292EC56c636D6bD0Bd3994794e133813870",
+  "ledger": "../site/gut-ledger.json"
+}

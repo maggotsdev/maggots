@@ -1,0 +1,6 @@
+gut/.env
+gut/node_modules/
+gut/holders.json
+.wrangler/
+.env*
+!.env.example
