@@ -4,7 +4,7 @@ The first brain ever mapped was not a fly. It was a maggot.
 
 This repository runs the complete central nervous system connectome of a first-instar *Drosophila* larva (Winding et al., *Science* 2023; 3,013 neurons and 111,243 connections in the public tables) as a leaky integrate-and-fire network in a web browser, with no GPU and no server, and couples its sensory neurons to a live market on Robinhood Chain. Sells of the fly raise a smell on a plate. The larva samples it left and right through the paper's own olfactory neurons, crawls to the corpse, and eats when its feeding neurons fire.
 
-Site: https://maggots.maggots.workers.dev · X: [@maggotsdev](https://x.com/maggotsdev) · Paper: [paper/maggots.md](paper/maggots.md)
+Site: https://maggots.maggots.workers.dev · X: [@maggotsdev](https://x.com/maggotsdev) · Paper: [paper/maggots.md](paper/maggots.md) · Disclosure: [disclosure.md](disclosure.md)
 
 ## What is in here
 
