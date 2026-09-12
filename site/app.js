@@ -169,7 +169,7 @@ Arena.addSource('FLYBRAIN', 0.72, 0.42);
   if (L) {
     $('g-bought').textContent = f18(L.totals.flyBought) + ' FLYBRAIN'; $('g-dropped').textContent = f18(L.totals.flyDropped) + ' FLYBRAIN to ' + L.totals.recipients + ' wallets';
     $('g-burned').textContent = f18(L.totals.maggotsBurned) + ' MAGGOTS';
-    const last = L.drops[L.drops.length - 1]; $('g-last').textContent = last ? (last.at.slice(0, 16).replace('T', ' ') + ' UTC · ' + f18(last.fly) + ' fly to ' + last.recipients + ' wallets') : 'none yet';
+    const last = L.drops[L.drops.length - 1]; $('g-last').textContent = last ? (last.at.slice(0, 16).replace('T', ' ') + ' UTC · ' + f18(last.fly) + ' FLYBRAIN to ' + last.recipients + ' wallets') : 'none yet';
     const tb = $('g-buys'); for (const b of L.buys.slice(-8).reverse()) { const tr = document.createElement('tr'); tr.innerHTML = `<td class="num">${b.at.slice(5, 16).replace('T', ' ')}</td><td class="num">${(Number(b.usdg) / 1e6).toFixed(2)}</td><td class="num">${f18(b.fly)}</td><td>${b.reason}</td><td class="addr"><a href="${CONFIG.explorer || 'https://robinhoodchain.blockscout.com'}/tx/${b.tx}">${b.tx.slice(0, 10)}…</a></td>`; tb.appendChild(tr); }
     if (!L.buys.length) { const tr = document.createElement('tr'); tr.innerHTML = '<td colspan="5" style="color:var(--ink-faint)">no buys yet. the gut fills at launch.</td>'; tb.appendChild(tr); }
   } else { $('g-bought').textContent = 'ledger not published yet'; }
